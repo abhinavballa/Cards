@@ -4,5 +4,7 @@ import "fmt"
 
 func main() {
 	cards := newDeck()
-	fmt.Println(cards)
+	fmt.Println(cards.toString())
+
+
 }

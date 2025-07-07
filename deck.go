@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 // create a new "deck" type
 type deck []string //new type of variable called deck, behaves exactly like a slice of strings
@@ -20,4 +23,14 @@ func newDeck() deck { //create every possible card
 		}
 	}
 	return cards
+
+}
+
+func deal(d deck, handSize int) (deck, deck) {
+	return d[:handSize], d[handSize:]
+}
+
+func (d deck) toString() string {
+	s := strings.Join([]string(d), ",")
+	return s
 }
